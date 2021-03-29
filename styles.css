@@ -113,9 +113,6 @@ main {
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
-    /*transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;*/
 }
 .pop {
     max-width: 900px;
@@ -124,11 +121,10 @@ main {
 
 .popend {
     max-width: 500px;
-    margin: 350px auto;
+    margin: 300px auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
+    align-items: center;  
     
 }
 

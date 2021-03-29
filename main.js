@@ -46,6 +46,7 @@ closed.addEventListener('click', ()=>{
 
 projectEnd.addEventListener('click', ()=>{
     backpop2.classList.toggle("show")
+    backpop.classList.toggle("show")
 })
 
 
@@ -55,37 +56,56 @@ const circle1 = document.getElementById('circle1');
 const select = document.getElementById('select1');
 const none = '';
 pledge1.innerHTML = none;
+function mycontinu() {  
+    const continu = document.getElementById('continue');
+    continu.addEventListener('click', ()=>{
+        backpop2.classList.toggle("show")
+    })
+}
 function mytoogle(){
     const none = '';
-    const enter_pledge = '<p class="dark-grey align-self-center auto">Enter your pledge</p><input class="btn rounded-pill fw-bold price" type="number" name="pledge" id="price" placeholder="$"><button class="btn btn-primary rounded-pill back fw-bold">Continue</button>';    
+    const enter_pledge = '<p class="dark-grey align-self-center auto">Enter your pledge</p><input class="btn rounded-pill fw-bold price" type="number" name="pledge" id="price" placeholder="$"><button id="continue" class="btn btn-primary rounded-pill back fw-bold">Continue</button>';    
+    
     if (pledge1.innerHTML === none){
         pledge1.innerHTML = enter_pledge;
     } else {
         pledge1.innerHTML = none;
     }  
 }
-card1.addEventListener('click', ()=>{
-    mytoogle();
+function mypledge1(){
     pledge1.classList.toggle("border-top");
     pledge1.classList.toggle("py-4");
     pledge1.classList.toggle("px-4");
     select1.classList.toggle("border-success");
     circle1.classList.toggle("select");
-    if (select2.classList.contains("border-success")){
-        mytoogle2();
+}
+function mypledge2(){
     pledge2.classList.toggle("border-top");
     pledge2.classList.toggle("py-4");
     pledge2.classList.toggle("px-4");
     select2.classList.toggle("border-success");
     circle2.classList.toggle("select");
-    }
-    if (select3.classList.contains("border-success")){
-        mytoogle3();
+}
+function mypledge3(){
     pledge3.classList.toggle("border-top");
     pledge3.classList.toggle("py-4");
     pledge3.classList.toggle("px-4");
     select3.classList.toggle("border-success");
     circle3.classList.toggle("select");
+}
+card1.addEventListener('click', ()=>{
+    mytoogle();
+    mypledge1();
+    setTimeout(function(){
+        mycontinu();
+    },200 )
+    if (select2.classList.contains("border-success")){
+        mytoogle2();
+        mypledge2();
+    }
+    if (select3.classList.contains("border-success")){
+        mytoogle3();
+        mypledge3();
     }
 });
 
@@ -97,7 +117,7 @@ const select2 = document.getElementById('select2');
 pledge2.innerHTML = none;
 function mytoogle2(){
     const none = '';
-    const enter_pledge = '<p id="continue" class="dark-grey align-self-center auto">Enter your pledge</p><input class="btn rounded-pill fw-bold price" type="number" name="pledge" id="price" placeholder="$"><button class="btn btn-primary rounded-pill back fw-bold">Continue</button>';    
+    const enter_pledge = '<p class="dark-grey align-self-center auto">Enter your pledge</p><input class="btn rounded-pill fw-bold price" type="number" name="pledge" id="price" placeholder="$"><button id="continue" class="btn btn-primary rounded-pill back fw-bold">Continue</button>';    
     if (pledge2.innerHTML === none){
         pledge2.innerHTML = enter_pledge;
     } else {
@@ -106,26 +126,17 @@ function mytoogle2(){
 }
 card2.addEventListener('click', ()=>{
     mytoogle2();
-    pledge2.classList.toggle("border-top");
-    pledge2.classList.toggle("py-4");
-    pledge2.classList.toggle("px-4");
-    select2.classList.toggle("border-success");
-    circle2.classList.toggle("select");
+    mypledge2();
+    setTimeout(function(){
+        mycontinu();
+    },200 )
     if (select3.classList.contains("border-success")){
         mytoogle3();
-    pledge3.classList.toggle("border-top");
-    pledge3.classList.toggle("py-4");
-    pledge3.classList.toggle("px-4");
-    select3.classList.toggle("border-success");
-    circle3.classList.toggle("select");
+        mypledge3();
     }
     if (select1.classList.contains("border-success")){
         mytoogle();
-    pledge1.classList.toggle("border-top");
-    pledge1.classList.toggle("py-4");
-    pledge1.classList.toggle("px-4");
-    select1.classList.toggle("border-success");
-    circle1.classList.toggle("select");
+        mypledge1();
     }
 });
 
@@ -136,7 +147,7 @@ const select3 = document.getElementById('select3');
 pledge3.innerHTML = none;
 function mytoogle3(){
     const none = '';
-    const enter_pledge = '<p class="dark-grey align-self-center auto">Enter your pledge</p><input class="btn rounded-pill fw-bold price" type="number" name="pledge" id="price" placeholder="$"><button class="btn btn-primary rounded-pill back fw-bold">Continue</button>';    
+    const enter_pledge = '<p class="dark-grey align-self-center auto">Enter your pledge</p><input class="btn rounded-pill fw-bold price" type="number" name="pledge" id="price" placeholder="$"><button id="continue" class="btn btn-primary rounded-pill back fw-bold">Continue</button>';    
     if (pledge3.innerHTML === none){
         pledge3.innerHTML = enter_pledge;
     } else {
@@ -145,26 +156,17 @@ function mytoogle3(){
 }
 card3.addEventListener('click', ()=>{
     mytoogle3();
-    pledge3.classList.toggle("border-top");
-    pledge3.classList.toggle("py-4");
-    pledge3.classList.toggle("px-4");
-    select3.classList.toggle("border-success");
-    circle3.classList.toggle("select");
+    mypledge3();
+    setTimeout(function(){
+        mycontinu();
+    },200 )
     if (select2.classList.contains("border-success")){
         mytoogle2();
-    pledge2.classList.toggle("border-top");
-    pledge2.classList.toggle("py-4");
-    pledge2.classList.toggle("px-4");
-    select2.classList.toggle("border-success");
-    circle2.classList.toggle("select");
+        mypledge2();
     }
     if (select1.classList.contains("border-success")){
         mytoogle();
-    pledge1.classList.toggle("border-top");
-    pledge1.classList.toggle("py-4");
-    pledge1.classList.toggle("px-4");
-    select1.classList.toggle("border-success");
-    circle1.classList.toggle("select");
+        mypledge1();
     }
     
 });
