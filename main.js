@@ -13,10 +13,12 @@ marked.addEventListener('click', ()=>{
 
 const closed = document.querySelector('.close');
 const backpop = document.querySelector('.backpop');
+const backpop2 = document.querySelector('.backpop2');
 const project = document.getElementById('project-button');
 const project2 = document.getElementById('project-button2');
 const project3 = document.getElementById('project-button3');
 const project4 = document.getElementById('project-button4');
+const projectEnd = document.getElementById('project-buttonEnd');
 
 project.addEventListener('click', ()=>{
     backpop.classList.toggle("show")
@@ -38,8 +40,12 @@ closed.addEventListener('click', ()=>{
     backpop.classList.toggle("show");
 });
 
-backpop.addEventListener('click', ()=> {
+/*backpop.addEventListener('click', ()=> {
     backpop.classList.toggle("show")
+})*/
+
+projectEnd.addEventListener('click', ()=>{
+    backpop2.classList.toggle("show")
 })
 
 
@@ -91,7 +97,7 @@ const select2 = document.getElementById('select2');
 pledge2.innerHTML = none;
 function mytoogle2(){
     const none = '';
-    const enter_pledge = '<p class="dark-grey align-self-center auto">Enter your pledge</p><input class="btn rounded-pill fw-bold price" type="number" name="pledge" id="price" placeholder="$"><button class="btn btn-primary rounded-pill back fw-bold">Continue</button>';    
+    const enter_pledge = '<p id="continue" class="dark-grey align-self-center auto">Enter your pledge</p><input class="btn rounded-pill fw-bold price" type="number" name="pledge" id="price" placeholder="$"><button class="btn btn-primary rounded-pill back fw-bold">Continue</button>';    
     if (pledge2.innerHTML === none){
         pledge2.innerHTML = enter_pledge;
     } else {

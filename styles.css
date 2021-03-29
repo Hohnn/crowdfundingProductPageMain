@@ -106,9 +106,30 @@ main {
     width: 100%;
     height: 100%;
 }
+.backpop2 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /*transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;*/
+}
 .pop {
     max-width: 900px;
     margin: 400px auto 0 auto;
+}
+
+.popend {
+    max-width: 500px;
+    margin: 350px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
 }
 
 .circle {
