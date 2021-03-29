@@ -8,7 +8,7 @@ body {
 }
 header {
     height: 500px;
-    background-image: url(/images/image-hero-desktop.jpg);
+    background-image: url(images/image-hero-desktop.jpg);
     background-size: cover;
     background-position: center;
     margin-bottom: -100px;
